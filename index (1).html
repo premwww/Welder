@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharma Metal Fabrication &amp; Welding | Jaipur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-deep: #0c0e10;
+    --bg: #111415;
+    --bg-2: #1a1c1e;
+    --bg-3: #1e2022;
+    --bg-4: #282a2c;
+    --orange: #f26a1b;
+    --orange-soft: #ffb694;
+    --text: #e2e2e5;
+    --muted: #a88a7e;
+    --tan: #e1c0b2;
+    --on-orange: #501c00;
+    --line: #594237;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .oswald { font-family: 'Oswald', Impact, sans-serif; text-transform: uppercase; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase;
+    color: var(--orange-soft); font-weight: 500;
+  }
+  .muted { color: var(--muted); }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 48px; padding: 0 24px; border-radius: 2px; border: 0; cursor: pointer;
+    font-family: 'Oswald', Impact, sans-serif; font-size: 20px; letter-spacing: 1px;
+    text-transform: uppercase; font-weight: 500; white-space: nowrap;
+    transition: filter .2s, transform .2s, background .2s;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--orange); color: var(--on-orange); box-shadow: 0 4px 10px rgba(242,106,27,.35); }
+  .btn-dark { background: var(--bg-4); color: var(--text); }
+  .btn-sm { height: 48px; font-size: 16px; letter-spacing: .8px; font-weight: 600; padding: 0 16px; background: var(--bg-4); color: var(--text); font-family: 'Inter', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: .6px; }
+  .btn:disabled { opacity: .6; cursor: not-allowed; }
+  .text-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 12px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--orange-soft);
+  }
+  .text-link:hover { color: var(--orange); }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 80px;
+    background: rgba(26,28,30,.95); backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 8px rgba(0,0,0,.4);
+  }
+  .header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand-mark {
+    width: 40px; height: 40px; border-radius: 2px; background: var(--orange);
+    display: grid; place-items: center; color: var(--on-orange); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 20px;
+  }
+  .brand-name { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); line-height: 1.1; }
+  .brand-sub { font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .nav { display: flex; gap: 24px; }
+  .nav a {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: .8px;
+    text-transform: uppercase; color: var(--tan); padding: 4px 0;
+  }
+  .nav a:hover { color: var(--orange); }
+  .header-actions { display: flex; align-items: center; gap: 16px; }
+  .header-actions .btn-primary { height: 48px; padding: 0 24px; }
+  .icon-circle {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--orange-soft);
+    display: grid; place-items: center; color: var(--on-orange); flex-shrink: 0;
+  }
+  .icon-circle svg { width: 14px; height: 14px; }
+
+  /* ---------- Shared icon boxes ---------- */
+  .ico {
+    width: 48px; height: 48px; border-radius: 2px; background: var(--bg-4);
+    display: grid; place-items: center; color: var(--orange-soft); flex-shrink: 0;
+  }
+  .ico svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .tick { width: 16px; height: 16px; stroke: var(--orange); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+  /* ---------- Photo placeholders (Figma raster images) ---------- */
+  .photo {
+    position: relative; overflow: hidden; border-radius: 2px;
+    background:
+      radial-gradient(circle at 60% 40%, rgba(242,106,27,.25), transparent 55%),
+      linear-gradient(160deg, #3a2f29 0%, #1e1a18 60%, #0f0d0c 100%);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.35);
+  }
+  .photo .ph-label {
+    position: absolute; inset: auto 0 0 0; padding: 16px; font-size: 11px; letter-spacing: .6px;
+    text-transform: uppercase; color: rgba(226,226,229,.55);
+  }
+  .photo.ph-center { display: grid; place-items: center; }
+
+  /* ---------- Section 1: Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden; background: var(--bg); padding: 112px 0 112px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05;
+    background-image: linear-gradient(90deg, #f26a1b 1px, transparent 1px), linear-gradient(#f26a1b 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero::after {
+    content: ""; position: absolute; left: -128px; top: -128px; width: 384px; height: 384px;
+    background: rgba(242,106,27,.1); filter: blur(64px); border-radius: 12px; pointer-events: none;
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .hero-copy { position: relative; z-index: 1; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--bg-4); padding: 4px 8px; border-radius: 2px;
+  }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 56px; line-height: 58.8px;
+    letter-spacing: -1.4px; text-transform: uppercase; margin: 24px 0 24px; color: var(--text);
+  }
+  .hero h1 .accent { color: var(--orange); }
+  .hero p.lead { font-size: 18px; line-height: 28px; color: var(--muted); max-width: 576px; margin-bottom: 32px; }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .trust-strip {
+    margin-top: 32px; background: rgba(26,28,30,.6); display: flex; gap: 8px; padding: 16px 8px 8px; border-radius: 2px;
+  }
+  .trust-strip div { flex: 1; display: flex; gap: 4px; align-items: center; font-size: 11px; font-weight: 500; letter-spacing: .55px; text-transform: uppercase; color: var(--tan); }
+  .trust-strip svg { width: 15px; height: 15px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .hero-photo { position: relative; height: 440px; }
+  .hero-photo .tag-top {
+    position: absolute; right: 16px; top: 16px; z-index: 2; background: rgba(12,14,16,.9); padding: 4px 8px;
+    font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--orange-soft); display: flex; gap: 4px; align-items: center; border-radius: 2px;
+  }
+  .hero-photo .tag-top::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+  .hero-photo .caption {
+    position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; padding: 8px; background: rgba(40,42,44,.9);
+    backdrop-filter: blur(4px); display: flex; justify-content: space-between; align-items: center; border-radius: 2px;
+  }
+  .hero-photo .caption b { display: block; font-size: 12px; letter-spacing: .6px; text-transform: uppercase; color: var(--text); font-weight: 600; }
+  .hero-photo .caption small { font-size: 11px; letter-spacing: .33px; color: var(--muted); font-weight: 500; }
+  .hero-photo .caption span { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--orange-soft); font-weight: 500; }
+
+  /* ---------- Section 2: Craftsman ---------- */
+  .craftsman { background: var(--bg-2); padding: 40px 0; }
+  .split-craft { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: center; }
+  .portrait { height: 448px; max-width: 448px; width: 100%; justify-self: center; position: relative; }
+  .portrait .name-plate {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 16px;
+    background: linear-gradient(to top, rgba(12,14,16,.95), rgba(12,14,16,0));
+  }
+  .portrait .name-plate h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 24px; text-transform: uppercase; color: var(--text); }
+  .portrait .name-plate p { font-size: 11px; letter-spacing: .55px; text-transform: uppercase; color: var(--orange-soft); font-weight: 500; }
+  .story .eyebrow { display: flex; gap: 4px; align-items: center; }
+  .story .eyebrow svg { width: 18px; height: 15px; stroke: var(--orange-soft); fill: none; stroke-width: 1.8; }
+  .story h2 {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 40px; line-height: 50px; letter-spacing: .4px;
+    text-transform: uppercase; margin: 16px 0 24px; color: var(--text);
+  }
+  .story p { font-size: 15px; line-height: 24.4px; color: var(--muted); margin-bottom: 14px; max-width: 672px; }
+  .checklist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 24px; }
+  .checklist div {
+    background: var(--bg-3); padding: 8px; display: flex; gap: 8px; align-items: center; border-radius: 2px;
+    font-size: 12px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; color: var(--text); line-height: 16px;
+  }
+
+  /* ---------- Section 3: Stats ---------- */
+  .stats { background: var(--bg-3); padding: 40px 0; }
+  .stats-head { text-align: center; padding-bottom: 24px; }
+  .stats-head h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; line-height: 40px; text-transform: uppercase; margin-top: 8px; color: var(--text); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat {
+    background: var(--bg-4); padding: 24px; border-radius: 2px; position: relative; display: flex; flex-direction: column; gap: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  }
+  .stat::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--orange); border-radius: 2px 2px 0 0; }
+  .stat .num { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 56px; line-height: 56px; letter-spacing: -1.4px; color: var(--orange); }
+  .stat .lbl { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; color: var(--text); line-height: 28px; }
+  .stat .desc { font-size: 13px; line-height: 18px; color: var(--muted); }
+
+  /* ---------- Section 4: Services ---------- */
+  .services { background: var(--bg); padding: 40px 0; }
+  .services-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 24px; }
+  .services-head h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 40px; line-height: 48px; letter-spacing: .4px; text-transform: uppercase; margin-top: 4px; color: var(--text); }
+  .services-head p { font-size: 15px; line-height: 22px; color: var(--muted); max-width: 448px; }
+  .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-top: 16px; }
+  .service {
+    background: var(--bg-2); padding: 24px; border-radius: 2px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  }
+  .service-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .service-top .spec { font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); font-weight: 500; padding-top: 4px; }
+  .service h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 24px; line-height: 32px; text-transform: uppercase; color: var(--text); margin-top: 16px; }
+  .service p { font-size: 15px; line-height: 24.4px; color: var(--muted); margin-top: 8px; }
+  .service-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 0; flex-wrap: wrap; gap: 8px; }
+  .tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .tags span { background: var(--bg-4); color: var(--tan); padding: 2px 8px; font-size: 11px; letter-spacing: .33px; font-weight: 500; border-radius: 2px; }
+  .notice {
+    margin-top: 24px; background: var(--bg-4); padding: 16px; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .notice .l { display: flex; align-items: center; gap: 16px; font-size: 15px; color: var(--text); }
+  .notice .l b { font-weight: 700; }
+  .notice .l svg { width: 15px; height: 24px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; flex-shrink: 0; }
+  .notice .btn-sm { height: 48px; }
+
+  /* ---------- Section 5: Conversion / Form ---------- */
+  .convert { position: relative; background: var(--bg-deep); padding: 40px 216px; overflow: hidden; }
+  .convert::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 500px; height: 500px; transform: translate(-50%, -50%);
+    background: rgba(242,106,27,.1); filter: blur(100px); border-radius: 12px; pointer-events: none;
+  }
+  .convert-card {
+    position: relative; background: var(--bg-3); padding: 40px; border-radius: 4px;
+    box-shadow: 0 0 15px rgba(242,106,27,.18); display: flex; flex-direction: column; gap: 24px; align-items: center;
+  }
+  .convert-head { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; }
+  .badge-orange {
+    background: var(--orange); color: var(--on-orange); padding: 4px 16px; border-radius: 2px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; display: inline-flex; gap: 4px; align-items: center;
+  }
+  .badge-orange svg { width: 12px; height: 15px; fill: var(--on-orange); }
+  .convert h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 56px; line-height: 64px; letter-spacing: 1.12px; text-transform: uppercase; color: var(--text); margin-top: 16px; }
+  .convert-head p { font-size: 18px; line-height: 28px; color: var(--muted); max-width: 512px; margin-top: 8px; }
+  .perks {
+    background: var(--bg-2); padding: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; border-radius: 2px;
+  }
+  .perk { display: flex; gap: 4px; align-items: flex-start; }
+  .perk svg { width: 18px; height: 20px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 2px; }
+  .perk h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; line-height: 28px; text-transform: uppercase; color: var(--text); }
+  .perk p { font-size: 13px; line-height: 18px; color: var(--muted); }
+
+  /* The form: only Name, Mobile and Address are kept */
+  .quick-form { width: 100%; max-width: 512px; display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .fields .full { grid-column: 1 / -1; }
+  .field input, .field textarea {
+    width: 100%; height: 48px; background: var(--bg); border: 1px solid transparent; border-radius: 2px; padding: 14px 16px;
+    font: 400 16px 'Inter', sans-serif; color: var(--text); outline: none;
+  }
+  .field textarea { height: 72px; resize: vertical; }
+  .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 1; }
+  .field input:focus, .field textarea:focus { border-color: var(--orange); }
+  .pay-btn {
+    width: 100%; height: 56px; background: var(--orange); color: var(--on-orange); border: 0; border-radius: 2px; cursor: pointer;
+    font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 24px; letter-spacing: 1.2px; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    box-shadow: 0 4px 12px rgba(242,106,27,.45); transition: filter .2s;
+  }
+  .pay-btn:hover { filter: brightness(1.06); }
+  .pay-btn:disabled { opacity: .6; cursor: not-allowed; }
+  .pay-btn svg { width: 16px; height: 21px; stroke: var(--on-orange); fill: none; stroke-width: 2; }
+  .trust-line { text-align: center; font-size: 11px; letter-spacing: .55px; text-transform: uppercase; color: var(--muted); font-weight: 500; line-height: 14px; }
+  .status { min-height: 22px; text-align: center; font-size: 14px; font-weight: 500; }
+  .status.ok { color: var(--orange-soft); }
+  .status.err { color: #ff8a8a; }
+  .methods { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 11px; letter-spacing: .33px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .methods span { display: inline-flex; gap: 4px; align-items: center; }
+  .methods svg { width: 14px; height: 14px; stroke: var(--muted); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ---------- Section 6: Contact & Map ---------- */
+  .contact { background: var(--bg-2); padding: 40px 0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .contact .eyebrow { display: flex; gap: 4px; align-items: center; }
+  .contact .eyebrow svg { width: 17px; height: 15px; stroke: var(--orange-soft); fill: none; stroke-width: 1.8; }
+  .contact h2 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 40px; line-height: 48px; letter-spacing: .4px; text-transform: uppercase; margin: 16px 0; }
+  .contact > .wrap > .contact-grid > div:first-child > p.lead { font-size: 18px; line-height: 28px; color: var(--muted); }
+  .details { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .detail { display: flex; gap: 16px; align-items: flex-start; }
+  .detail .lbl { font-size: 11px; letter-spacing: 1.1px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .detail .val { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--text); text-transform: uppercase; line-height: 28px; font-weight: 500; }
+  .detail .txt { font-size: 15px; color: var(--text); line-height: 21px; }
+  .detail .txt small { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .detail .phones { display: flex; gap: 12px; flex-wrap: wrap; font-size: 15px; font-weight: 600; color: var(--text); }
+  .detail .phones span { color: var(--muted); font-weight: 400; }
+  .ctas { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .map-card { background: var(--bg-3); border-radius: 2px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1); }
+  .map {
+    height: 320px; position: relative; background: #333537;
+    background-image:
+      linear-gradient(115deg, transparent 47%, #4a4d50 47%, #4a4d50 49%, transparent 49%),
+      linear-gradient(20deg, transparent 60%, #3e4144 60%, #3e4144 62%, transparent 62%),
+      linear-gradient(#2b2e30 1px, transparent 1px),
+      linear-gradient(90deg, #2b2e30 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+  }
+  .map .pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; }
+  .map .pin .marker { width: 45px; height: 54px; background: var(--orange); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,.4); }
+  .map .pin .marker span { transform: rotate(45deg); color: var(--on-orange); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 18px; }
+  .map .pin .label { margin-top: 8px; background: rgba(12,14,16,.95); padding: 4px 16px; text-align: center; border-radius: 2px; }
+  .map .pin .label b { display: block; font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; color: var(--text); line-height: 28px; }
+  .map .pin .label small { font-size: 11px; letter-spacing: .33px; color: var(--orange-soft); font-weight: 500; }
+  .map .map-note { position: absolute; left: 12px; bottom: 12px; font-size: 10px; color: rgba(226,226,229,.5); letter-spacing: .3px; }
+  .map-foot { padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .map-foot .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .map-foot .row .k { font-size: 12px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .map-foot .row .chip { background: var(--bg-4); color: var(--orange-soft); padding: 2px 8px; font-size: 11px; font-weight: 500; letter-spacing: .33px; border-radius: 2px; }
+  .map-foot p { font-size: 15px; line-height: 22px; color: var(--text); }
+  .map-foot p b { font-weight: 700; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--bg-deep); padding: 40px 0 24px; }
+  .foot-grid { display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 40px; padding-bottom: 40px; }
+  .foot-brand .brand { margin-bottom: 8px; }
+  .foot-brand h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-soft); margin-top: 8px; }
+  .foot-brand p { font-size: 15px; line-height: 22px; color: var(--muted); max-width: 384px; margin-top: 12px; }
+  .foot-col h4 { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: .8px; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .foot-col a { font-size: 13px; color: var(--muted); line-height: 18px; }
+  .foot-col a:hover { color: var(--orange-soft); }
+  .foot-col .hl { font-weight: 600; color: var(--orange-soft); }
+  .foot-col .hl span { font-weight: 400; color: var(--tan); }
+  .foot-col p { font-size: 13px; color: var(--muted); line-height: 18px; margin-bottom: 8px; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(89,66,55,.25); gap: 16px; flex-wrap: wrap; }
+  .foot-bottom p { font-size: 13px; color: var(--muted); }
+  .foot-bottom span { font-size: 11px; letter-spacing: .55px; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .convert { padding: 40px 24px; }
+    .nav { gap: 16px; }
+    .nav a { font-size: 15px; }
+  }
+  @media (max-width: 1024px) {
+    .nav { display: none; }
+    .hero h1 { font-size: 48px; line-height: 52px; }
+    .hero-grid, .split-craft, .contact-grid { grid-template-columns: 1fr; }
+    .hero-photo { height: 360px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-head { flex-direction: column; align-items: flex-start; }
+    .convert h2 { font-size: 44px; line-height: 50px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .header-actions .btn-sm { display: none; }
+    .header-actions .btn-primary { height: 40px; padding: 0 14px; font-size: 16px; }
+    .hero { padding: 96px 0 72px; }
+    .hero h1 { font-size: 40px; line-height: 44px; letter-spacing: -.8px; }
+    .hero p.lead { font-size: 16px; line-height: 24px; }
+    .btn { font-size: 18px; height: 44px; }
+    .trust-strip { flex-direction: column; gap: 8px; }
+    .hero-photo { height: 300px; }
+    .checklist { grid-template-columns: 1fr; }
+    .story h2, .services-head h2, .contact h2 { font-size: 30px; line-height: 38px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .service-grid { grid-template-columns: 1fr; }
+    .convert-card { padding: 24px; }
+    .convert h2 { font-size: 34px; line-height: 40px; }
+    .perks { grid-template-columns: 1fr; }
+    .fields { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    .map { height: 260px; }
+    .portrait { height: 360px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER (Figma: Header 1:954) ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">SM</div>
+      <div>
+        <div class="brand-name">Sharma Metal</div>
+        <div class="brand-sub">Fabrication &amp; Welding</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-sm" href="tel:+919829012345">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffb694" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call Workshop
+      </a>
+      <a class="btn btn-primary" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener">Pay ₹100</a>
+      <div class="icon-circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ SECTION 1: HERO (Figma 1:497) ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill eyebrow"><span class="dot"></span>Jaipur Workshop • Estd. 2006</span>
+      <h1>Strong Welds.<br>Honest Work.<br><span class="accent">Built to Last.</span></h1>
+      <p class="lead">Precision metal fabrication, structural repairs, custom ornamental gates, and heavy-duty shop welding by master craftsmen in Jaipur, Rajasthan. Serving residential, commercial, and industrial clients for over 18 years.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#pay">Get a Free Quote</a>
+        <a class="btn btn-dark" href="tel:+919829012345">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffb694" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call: +91 98290 12345
+        </a>
+      </div>
+      <div class="trust-strip">
+        <div>
+          <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V8l6-4 6 4v12M10 20v-6h4v6"/></svg>
+          100% On-Site &amp; Shop
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+          Govt. Certified Master
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          Zero Hidden Fees
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo ph-center" style="position:absolute; inset:0;">
+        <span class="ph-label">Add image: assets/workshop-gate.jpg</span>
+      </div>
+      <div class="tag-top">In-Shop Live Arc</div>
+      <div class="caption">
+        <div>
+          <b>Ornamental Gate Assembly</b>
+          <small>Mild Steel • Wrought Iron Scrollwork</small>
+        </div>
+        <span>IS 2062</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: CRAFTSMAN (Figma 1:550) ============ -->
+<section class="craftsman" id="about">
+  <div class="wrap split-craft">
+    <div class="portrait">
+      <div class="photo" style="position:absolute; inset:0;">
+        <span class="ph-label" style="bottom:auto; top:50%; transform:translateY(-50%); text-align:center;">Add image: assets/ramesh-sharma.jpg</span>
+      </div>
+      <div class="name-plate">
+        <h4>Ramesh Sharma</h4>
+        <p>Founder &amp; Chief Welding Inspector</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1M17 6l2 2 3-4"/></svg>
+        18 Years on the Workshop Floor
+      </div>
+      <h2>Crafted with pride &amp; precision: meet Ramesh Sharma</h2>
+      <p>I started Sharma Metal Fabrication with a simple belief: steel should be forged with integrity and welds should outlive the buildings they hold up. For nearly two decades, my team and I have bent, cut, and welded iron, mild steel, and stainless steel for homes, factories, and construction sites across Rajasthan.</p>
+      <p>We don't take shortcuts. Every weld is inspected for penetration and structural strength, and every custom gate or railing is handcrafted to your exact specifications. When you hire us, you deal directly with the master craftsman on the workshop floor, not a sales representative.</p>
+      <div class="checklist">
+        <div><svg class="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Direct craftsman accountability</div>
+        <div><svg class="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Punctual project delivery</div>
+        <div><svg class="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>High-grade ISI certified steel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: STATS (Figma 1:589) ============ -->
+<section class="stats" id="achievements">
+  <div class="wrap">
+    <div class="stats-head">
+      <div class="eyebrow">Tested in fire &amp; steel</div>
+      <h2>Proven Workshop Track Record</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">1,250+</div>
+        <div class="lbl">Projects Completed</div>
+        <div class="desc">Residential, commercial &amp; heavy factory jobs</div>
+      </div>
+      <div class="stat">
+        <div class="num">18+</div>
+        <div class="lbl">Years Craftsmanship</div>
+        <div class="desc">Operating continuously in VKI Jaipur</div>
+      </div>
+      <div class="stat">
+        <div class="num">99.4%</div>
+        <div class="lbl">On-Time Delivery</div>
+        <div class="desc">Strict adherence to structural deadlines</div>
+      </div>
+      <div class="stat">
+        <div class="num">450+</div>
+        <div class="lbl">Gates &amp; Railings</div>
+        <div class="desc">Bespoke wrought iron &amp; stainless installations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: SERVICES (Figma 1:631) ============ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <div>
+        <div class="eyebrow">Core fabrication services</div>
+        <h2>What we build &amp; weld</h2>
+      </div>
+      <p>Every project is handled with precision cutting, certified penetration welding, and anti-corrosion primer coating before handover.</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service">
+        <div>
+          <div class="service-top">
+            <div class="ico">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M4 14h16M9 4v16M14 4v16"/></svg>
+            </div>
+            <span class="spec">Spec 01 / Ornamental</span>
+          </div>
+          <h3>Gates and Railings</h3>
+          <p>Custom designed wrought iron and mild steel main gates, safety sliding gates, staircase railings, and balcony grilles built for both elegance and lifetime security.</p>
+        </div>
+        <div class="service-foot">
+          <div class="tags"><span>Wrought Iron</span><span>SS 304</span></div>
+          <a class="text-link" href="tel:+919829012345">Book Visit →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <div class="service-top">
+            <div class="ico">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg>
+            </div>
+            <span class="spec">Spec 02 / Repair</span>
+          </div>
+          <h3>Structural Repairs</h3>
+          <p>Emergency and scheduled repairs on rusted beams, heavy machinery chassis, metal shed trusses, cracked steel frames, and load-bearing pillars.</p>
+        </div>
+        <div class="service-foot">
+          <div class="tags"><span>Heavy Chassis</span><span>On-Site Arc</span></div>
+          <a class="text-link" href="tel:+919829012345">Book Visit →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <div class="service-top">
+            <div class="ico">
+              <svg viewBox="0 0 24 24"><path d="M4 20h16M4 20V4l16 16"/></svg>
+            </div>
+            <span class="spec">Spec 03 / Bespoke</span>
+          </div>
+          <h3>Custom Fabrication</h3>
+          <p>Tailor-made industrial racks, mezzanine storage platforms, spiral staircases, display structures, and architect-designed ornamental metalwork.</p>
+        </div>
+        <div class="service-foot">
+          <div class="tags"><span>Mezzanines</span><span>Custom CAD</span></div>
+          <a class="text-link" href="tel:+919829012345">Book Visit →</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div>
+          <div class="service-top">
+            <div class="ico">
+              <svg viewBox="0 0 24 24"><path d="M2 20h20V9l-6 3V9l-6 3V5H2z"/></svg>
+            </div>
+            <span class="spec">Spec 04 / Industrial</span>
+          </div>
+          <h3>Shop &amp; Industrial Work</h3>
+          <p>High-amperage TIG/MIG welding, lathe turning, metal shearing, press bending, and batch production components for local manufacturing units.</p>
+        </div>
+        <div class="service-foot">
+          <div class="tags"><span>TIG / MIG</span><span>Lathe Turning</span></div>
+          <a class="text-link" href="tel:+919829012345">Book Visit →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="notice">
+      <div class="l">
+        <svg viewBox="0 0 24 24"><path d="M12 2l8 8-8 12-8-12z"/></svg>
+        <span><b>Need custom dimensions or on-site welding inspection?</b> Bring your sketch or blueprints directly to our workshop floor.</span>
+      </div>
+      <a class="btn btn-sm" href="#location">Workshop Location</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: PAYMENT / FORM (Figma 1:746) ============ -->
+<section class="convert" id="pay">
+  <div class="convert-card">
+    <div class="convert-head">
+      <span class="badge-orange">
+        <svg viewBox="0 0 12 15"><path d="M7 0L0 9h5l-1 6 7-9H6z"/></svg>
+        Priority Workshop Slot &amp; Site Visit
+      </span>
+      <h2>Pay ₹100 to start your project</h2>
+      <p>Lock in your workshop slot, get an accurate on-site laser measurement and detailed material cost estimate.</p>
+    </div>
+
+    <div class="perks">
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <div><h4>24H Master Visit</h4><p>Guaranteed on-site inspection by Master Welder within 24 hours.</p></div>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <div><h4>Cost Breakdown</h4><p>Detailed structural material gauges, weight, and labor quote.</p></div>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <div><h4>100% Adjusted</h4><p>The ₹100 advance is fully adjusted in your final project bill.</p></div>
+      </div>
+    </div>
+
+    <form class="quick-form" id="leadForm" novalidate>
+      <div class="fields">
+        <div class="field">
+          <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <input type="tel" id="phone" name="phone" placeholder="Mobile (e.g. 98290XXXXX)" autocomplete="tel" required>
+        </div>
+        <div class="field full">
+          <textarea id="address" name="address" placeholder="Your Address" autocomplete="street-address" required></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="pay-btn" id="submitBtn">
+        <svg viewBox="0 0 16 21"><rect x="2" y="9" width="12" height="10" rx="1"/><path d="M5 9V6a3 3 0 0 1 6 0v3"/></svg>
+        Pay ₹100 Now
+      </button>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <div class="trust-line">100% secure payment • Amount adjusted in final invoice • No-obligation estimate</div>
+
+      <div class="methods">
+        <span>UPI (GPay / PhonePe / Paytm)</span>
+        <span>•</span>
+        <span>RuPay / Visa / Master</span>
+        <span>•</span>
+        <span>
+          <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          256-bit encrypted
+        </span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: CONTACT & MAP (Figma 1:821) ============ -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V8l8-4 8 4v12"/></svg>
+        Jaipur Workshop Facility
+      </div>
+      <h2>Visit the workshop or get in touch</h2>
+      <p class="lead">We are always ready to discuss your fabrication project over a cup of chai.</p>
+
+      <div class="details">
+        <div class="detail">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg></div>
+          <div>
+            <div class="lbl">Owner &amp; Master Fabricator</div>
+            <div class="val">Vimal Raj</div>
+          </div>
+        </div>
+        <div class="detail">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div>
+            <div class="lbl">Phone / WhatsApp Inquiries</div>
+            <div class="phones"><a href="tel:+919829012345">+91 98290 12345</a><span>/</span><a href="tel:+919414098765">+91 94140 98765</a></div>
+          </div>
+        </div>
+        <div class="detail">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div>
+            <div class="lbl">Workshop Address</div>
+            <div class="txt">Plot No. 42, Vishwakarma Industrial Area (VKI), Road No. 9, Jaipur, Rajasthan 302013</div>
+          </div>
+        </div>
+        <div class="detail">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div>
+            <div class="lbl">Working Hours</div>
+            <div class="txt">Monday – Saturday: 8:00 AM – 7:30 PM<small>(Sunday by appointment for site measurements)</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ctas">
+        <a class="btn btn-primary" href="tel:+919829012345">Call: +91 98290 12345</a>
+        <a class="btn btn-dark" href="https://wa.me/919829012345" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="map-card" id="location">
+      <div class="map">
+        <div class="pin">
+          <div class="marker"><span>SM</span></div>
+          <div class="label">
+            <b>Sharma Metal Workshop</b>
+            <small>Road No. 9, VKI Area, Jaipur</small>
+          </div>
+        </div>
+        <div class="map-note">Map placeholder: embed Google Maps here if needed</div>
+      </div>
+      <div class="map-foot">
+        <div class="row">
+          <span class="k">Industrial Landmark</span>
+          <span class="chip">Easy Heavy Vehicle Access</span>
+        </div>
+        <p><b>Opposite Rajasthan Iron Godown</b>, near Vishwakarma Circle. Broad 60-foot road suitable for trailers, flatbed trucks, and crane unloading.</p>
+        <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Vishwakarma+Industrial+Area+Jaipur" target="_blank" rel="noopener">Get driving directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (Figma 1:914) ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="brand-mark">SM</div>
+          <div class="brand-name" style="font-size:24px; letter-spacing:1.2px;">Sharma Metal</div>
+        </div>
+        <h3>Strong work for strong people</h3>
+        <p>Heavy structural steel fabrication, high-precision TIG/MIG welding, gate and grille manufacturing, and certified on-site industrial ironworks across Delhi NCR.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Quick Workshop Links</h4>
+        <ul>
+          <li><a href="#services">Services &amp; Capabilities</a></li>
+          <li><a href="#achievements">Workshop History</a></li>
+          <li><a href="#achievements">Major Projects</a></li>
+          <li><a href="#location">Location &amp; Inquiries</a></li>
+          <li><a href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener">Advance Token (₹100)</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Direct Contact</h4>
+        <p>Plot 42, Focal Point Industrial Area, Sector 58, Ballabhgarh / Faridabad, Haryana</p>
+        <p class="hl">Hotline: <span>+91 98765 43210</span></p>
+        <p class="hl">Hours: <span>Mon - Sat: 8:00 AM - 8:30 PM</span></p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p>© 2024 Sharma Metal Fabrication &amp; Welding. All rights reserved.</p>
+      <span>IS 2062 Grade Industrial Standards</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Configuration ----
+  const SCRIPT_URL  = "https://script.google.com/macros/s/AKfycbwDS3aYwJ4fW-RJjQULl8-IRqzxSa2fHLCQug3mMgXqWE6Uxk9huGIWC6q4DqUNeKi2/exec";
+  const PAYMENT_URL = "https://payments.cashfree.com/forms/getaudit";
+
+  // ---- Elements ----
+  const form      = document.getElementById("leadForm");
+  const nameEl    = document.getElementById("name");
+  const phoneEl   = document.getElementById("phone");
+  const addressEl = document.getElementById("address");
+  const submitBtn = document.getElementById("submitBtn");
+  const statusEl  = document.getElementById("status");
+
+  function setLoading(isLoading) {
+    submitBtn.disabled = isLoading;
+    submitBtn.textContent = isLoading ? "Saving details..." : "Pay ₹100 Now";
+  }
+
+  function showSuccess() {
+    statusEl.className = "status ok";
+    statusEl.textContent = "Details saved. Redirecting you to secure payment...";
+    setTimeout(function () {
+      window.location.href = PAYMENT_URL;
+    }, 1200);
+  }
+
+  function showError(msg) {
+    setLoading(false);
+    statusEl.className = "status err";
+    statusEl.textContent = msg || "Something went wrong. Please try again or call us on +91 98290 12345.";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name    = nameEl.value.trim();
+    const phone   = phoneEl.value.trim();
+    const address = addressEl.value.trim();
+
+    if (!name || !phone || !address) {
+      showError("Please fill in your name, mobile number and address.");
+      return;
+    }
+
+    statusEl.className = "status";
+    statusEl.textContent = "";
+    setLoading(true);
+
+    const url = SCRIPT_URL + "?" + new URLSearchParams({ name: name, phone: phone, address: address });
+
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(() => showSuccess())
+      .catch(() => showError());
+  });
+</script>
+
+</body>
+</html>
